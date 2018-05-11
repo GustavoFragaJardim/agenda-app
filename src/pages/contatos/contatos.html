@@ -1,0 +1,22 @@
+
+  <ion-header>
+      <ion-navbar>
+          <button ion-button menuToggle>
+              <ion-icon name="menu"></ion-icon>>
+            </button>
+        <ion-title>contatos</ion-title>
+      </ion-navbar>
+    </ion-header>
+  
+  <ion-content padding> 
+    <ion-searchbar placeholder="nome do contato">
+    </ion-searchbar>
+    <ion-item *ngFor="let contato of contatos">
+      {{contato.nome}}
+    </ion-item>
+  </ion-content>
+  <ion-footer>
+    <button ion-button color='light' (click) = "addContato()">
+      <ion-icon name="add-circle"></ion-icon>
+    </button>
+  </ion-footer>

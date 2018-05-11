@@ -5,15 +5,20 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { ContatosPage } from '../pages/contatos/contatos';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ContatosProvider } from '../providers/contatos/contatos';
+import { ContatoDetalhePage} from '../pages/contato-detalhe/contato-detalhe';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    ContatosPage,
+    ContatoDetalhePage
   ],
   imports: [
     BrowserModule,
@@ -23,12 +28,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    ContatosPage,
+    ContatoDetalhePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ContatosProvider
   ]
 })
 export class AppModule {}
