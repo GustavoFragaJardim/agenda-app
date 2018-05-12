@@ -11,7 +11,7 @@ export class ContatosPage {
 
   contatos: Array<{nome: string, endereco: string, cep: string, lat: number, long: number, email:string}> = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private contatosProvider: ContatosProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private ContatosProvider: ContatosProvider) {
     this.contatos = ContatosProvider.getContatos();
   }
 
